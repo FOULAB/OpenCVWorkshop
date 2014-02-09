@@ -1,0 +1,9 @@
+Example: using the watersheds example to segment a robot picture
+
+python watersheds.py data/robot.ppm
+
+Counting change - 
+python countingchange.py --method threshold --space hue data/388_resized.jpg
+
+
+

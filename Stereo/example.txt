@@ -1,0 +1,11 @@
+for i in series/*.JPG; do python undistortimage.py data/canon_parameters.npz $i ${i/.JPG/_undist.jpg}; convert -resize 50% ${i/.JPG/_undist.jpg} ${i/.JPG/_undist_small.jpg}; convert -resize 50% ${i} ${i/.JPG/_small.jpg}; done
+
+python calibrate.py --save calibrationparameters.npz canon_calibration/'*'.JPG
+
+note the * in quotes, calibrate does its own globbing
+
+python calibrate.py --save sonyparameters.npz --debug sonydebug cellphone_calibration/'*'.jpg
+
+python stereo_match.py series/IMG_2865_undist_small.jpg series/IMG_2868_undist_small.jpg cameraund
+This pair works well
+python stereo_match.py cellphoneseries/DSC_0480_small.jpg cellphoneseries/DSC_0487_small.jpg test

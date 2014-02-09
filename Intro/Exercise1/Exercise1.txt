@@ -1,0 +1,6 @@
+helloworld.py loads an image and either displays it, or saves it depending on its arguments
+blurimage.py loads an image and either displays it, or saves it...
+videoplay.py plays a video either from disk, or from the camera, shows use of a trackbar
+videograb.py plays video from the camera, and you can grab frames to disk
+
+
