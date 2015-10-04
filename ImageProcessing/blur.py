@@ -16,15 +16,15 @@ def doIt(args):
    imgGray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY) #convert to grayscale
    
    #Simple GaussianBlur, medianBlur and boxFilter examples
-   imgFilt = cv2.GaussianBlur(imgGray,(3,3),1)  #sigmaX = 1, sigmaY = 1
+  # imgFilt = cv2.GaussianBlur(imgGray,(3,3),1)  #sigmaX = 1, sigmaY = 1
    #imgFilt = cv2.medianBlur(imgGray,3)
    #imgFilt = cv2.boxFilter(imgGray,-1,(3,3))  
    
    #Uncomment the following for boxFilter example:
-   #cols = imgGray.shape[1]
-   #rows = imgGray.shape[0]
-   #imgFilt = np.zeros((rows,cols),imgGray.dtype)  #create output image
-  # cv2.boxFilter(imgGray,-1,(3,3),imgFilt,(-1,-1),True,cv2.BORDER_REPLICATE)  #all optional parameters used
+   cols = imgGray.shape[1]
+   rows = imgGray.shape[0]
+   imgFilt = np.zeros((rows,cols),imgGray.dtype)  #create output image
+   cv2.boxFilter(imgGray,-1,(3,3),imgFilt,(-1,-1),True,cv2.BORDER_REPLICATE)  #all optional parameters used
   
    #Uncomment the following for filter2D example:
    #kernel = (0.1111111)*np.ones((3,3),np.float32)

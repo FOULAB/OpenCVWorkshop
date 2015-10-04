@@ -39,7 +39,8 @@ if __name__ == '__main__':
         thrs1 = cv2.getTrackbarPos('thrs1', 'edge')
         thrs2 = cv2.getTrackbarPos('thrs2', 'edge')
         edge = cv2.Canny(gray, thrs1, thrs2, apertureSize=5)
-        vis = img.copy()
+        vis = img
+        # vis = img.copy()
         vis /= 2
         vis[edge != 0] = (0, 255, 0)
         cv2.imshow('edge', vis)
